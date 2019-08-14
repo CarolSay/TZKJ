@@ -32,11 +32,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.content = new System.Windows.Forms.TextBox();
-            this.searchTitle = new System.Windows.Forms.Button();
-            this.searchContent = new System.Windows.Forms.Button();
             this.searchResult = new System.Windows.Forms.TextBox();
             this.save = new System.Windows.Forms.Button();
             this.saveContent = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // title
@@ -45,6 +49,7 @@
             this.title.Name = "title";
             this.title.Size = new System.Drawing.Size(149, 21);
             this.title.TabIndex = 0;
+            this.title.Text = "视图位置";
             // 
             // label1
             // 
@@ -59,39 +64,21 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 31);
+            this.label2.Location = new System.Drawing.Point(12, 84);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 12);
             this.label2.TabIndex = 2;
             this.label2.Text = "bug关键字";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // content
             // 
-            this.content.Location = new System.Drawing.Point(106, 31);
+            this.content.Location = new System.Drawing.Point(104, 84);
             this.content.Multiline = true;
             this.content.Name = "content";
             this.content.Size = new System.Drawing.Size(166, 37);
             this.content.TabIndex = 3;
-            // 
-            // searchTitle
-            // 
-            this.searchTitle.Location = new System.Drawing.Point(14, 91);
-            this.searchTitle.Name = "searchTitle";
-            this.searchTitle.Size = new System.Drawing.Size(91, 23);
-            this.searchTitle.TabIndex = 4;
-            this.searchTitle.Text = "搜索bug位置";
-            this.searchTitle.UseVisualStyleBackColor = true;
-            this.searchTitle.Click += new System.EventHandler(this.searchTitle_Click);
-            // 
-            // searchContent
-            // 
-            this.searchContent.Location = new System.Drawing.Point(131, 91);
-            this.searchContent.Name = "searchContent";
-            this.searchContent.Size = new System.Drawing.Size(91, 23);
-            this.searchContent.TabIndex = 5;
-            this.searchContent.Text = "搜索bug关键字";
-            this.searchContent.UseVisualStyleBackColor = true;
-            this.searchContent.Click += new System.EventHandler(this.searchContent_Click);
+            this.content.Text = "通常是报错返回的内容";
             // 
             // searchResult
             // 
@@ -100,8 +87,7 @@
             this.searchResult.Name = "searchResult";
             this.searchResult.Size = new System.Drawing.Size(258, 54);
             this.searchResult.TabIndex = 6;
-            this.searchResult.Text = "记录解决思路（第一行自己填写，第二行开始为查询结果）";
-            this.searchResult.TextChanged += new System.EventHandler(this.searchResult_TextChanged);
+            this.searchResult.Text = "记录解决思路，用于培养解决";
             // 
             // save
             // 
@@ -115,23 +101,78 @@
             // 
             // saveContent
             // 
-            this.saveContent.Location = new System.Drawing.Point(14, 225);
+            this.saveContent.Location = new System.Drawing.Point(12, 217);
             this.saveContent.Multiline = true;
             this.saveContent.Name = "saveContent";
             this.saveContent.Size = new System.Drawing.Size(258, 54);
             this.saveContent.TabIndex = 8;
             this.saveContent.Text = "记录解决办法";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(106, 54);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(149, 21);
+            this.textBox1.TabIndex = 9;
+            this.textBox1.Text = "控制器位置";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(106, 27);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(149, 21);
+            this.textBox2.TabIndex = 10;
+            this.textBox2.Text = "js位置";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(-1, 372);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(101, 12);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "上传代码对比图片";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(106, 369);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 21);
+            this.textBox3.TabIndex = 12;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(231, 369);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "上传";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(14, 407);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(113, 12);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "推荐滚动截图软件：";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(376, 350);
+            this.ClientSize = new System.Drawing.Size(384, 462);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.saveContent);
             this.Controls.Add(this.save);
             this.Controls.Add(this.searchResult);
-            this.Controls.Add(this.searchContent);
-            this.Controls.Add(this.searchTitle);
             this.Controls.Add(this.content);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -149,11 +190,15 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox content;
-        private System.Windows.Forms.Button searchTitle;
-        private System.Windows.Forms.Button searchContent;
         private System.Windows.Forms.TextBox searchResult;
         private System.Windows.Forms.Button save;
         private System.Windows.Forms.TextBox saveContent;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label4;
     }
 }
 
